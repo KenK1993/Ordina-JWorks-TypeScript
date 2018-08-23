@@ -22,4 +22,9 @@ class Movie extends Item implements Rating{
 
         element.appendChild(article);
     }
+
+    static fromJSON(data: any){
+
+        return new Movie(data.title,data.genre,data.description,data.age,data.name);
+    }
 }
