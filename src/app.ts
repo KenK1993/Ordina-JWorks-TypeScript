@@ -1,16 +1,13 @@
-function publishItems(title:string,genre:string,description:string) : void {
+let author: Author = new Author("Ken Keymolen");
 
-    let article: HTMLElement = document.createElement("article")
-    article.innerHTML =
-        "<h3>" + title + "</h3>" +
-        "<p>" + genre + "</p>" +
-        "<span>" + description + "</span>";
+let items: Item[] = [
+    new Book("Test Book - 1", "Testing", "This is a Test Description for the first book", author),
+    new Book("Test Book - 2", "Testing", "This is a Test Description for a second book", author),
+    new Movie("Test Movie - 1", "Testing", "This is a Test Description for a movie"),
+    new Movie("Test Movie - 2", "Testing", "This is a Test Description for a movie"),
+];
 
+let library: Library = new Library(items);
 
-    document.getElementById("items").appendChild(article);
+library.printItems();
 
-}
-
-publishItems("Matrix","Thriller","Did you know, Neo is the one?");
-
-publishItems("Moby Dick","Drama","Is this fish for real?");

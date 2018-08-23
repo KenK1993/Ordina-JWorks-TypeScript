@@ -1,11 +1,10 @@
-function publishItems(title, genre, description) {
-    var article = document.createElement("article");
-    article.innerHTML =
-        "<h3>" + title + "</h3>" +
-            "<p>" + genre + "</p>" +
-            "<span>" + description + "</span>";
-    document.getElementById("items").appendChild(article);
-}
-publishItems("Matrix", "Thriller", "Did you know, Neo is the one?");
-publishItems("Moby Dick", "Drama", "Is this fish for real?");
+var author = new Author("Ken Keymolen");
+var items = [
+    new Book("Test Book - 1", "Testing", "This is a Test Description for the first book", author),
+    new Book("Test Book - 2", "Testing", "This is a Test Description for a second book", author),
+    new Movie("Test Movie - 1", "Testing", "This is a Test Description for a movie"),
+    new Movie("Test Movie - 2", "Testing", "This is a Test Description for a movie"),
+];
+var library = new Library(items);
+library.printItems();
 //# sourceMappingURL=app.js.map
